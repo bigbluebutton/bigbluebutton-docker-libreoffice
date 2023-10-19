@@ -32,18 +32,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Get current date
-        id: date
-        if: contains(env.DOCKER_BUILD_ENABLED, 'true')
-        shell: bash
-        run: echo "time=$(date +'%Y-%m-%d-%H%M%S')" >> $GITHUB_OUTPUT
-
       - name: Build and Push branch
         if: contains(env.DOCKER_BUILD_ENABLED, 'true')
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: "bigbluebutton/bbb-libreoffice:${{ github.ref_name }}--${{ steps.date.outputs.time }}"
+          tags: "bigbluebutton/bbb-libreoffice:${{ github.ref_name }}"
           context: .
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
