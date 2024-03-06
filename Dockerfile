@@ -23,3 +23,4 @@ RUN wget https://download.documentfoundation.org/libreoffice/stable/${LIBREOFFIC
 
 RUN ["/bin/bash", "-c", "ln -s /usr/local/bin/libreoffice* /usr/bin/soffice"]
 RUN /usr/bin/soffice --version
+
