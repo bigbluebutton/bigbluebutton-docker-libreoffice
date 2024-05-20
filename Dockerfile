@@ -1,7 +1,7 @@
 FROM ubuntu:22.04
 LABEL authors="Anton Georgiev"
 
-ENV LIBREOFFICE_VERSION=7.6.5
+ENV LIBREOFFICE_VERSION=7.6.6
 
 RUN apt-get update && apt-get install -y \
   default-jre-headless \
