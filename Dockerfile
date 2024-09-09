@@ -1,12 +1,14 @@
 FROM ubuntu:22.04
 LABEL authors="Anton Georgiev"
 
-ENV LIBREOFFICE_VERSION=24.8.1.1
+ENV LIBREOFFICE_VERSION=24.8.0
 
 RUN apt-get update && apt-get install -y \
   default-jre-headless \
   libcairo2 \
+  libx11-xcb1 \
   libxinerama1 \
+  libxslt1.1 \
   libxt6 \
   wget \
   && apt-get clean \
