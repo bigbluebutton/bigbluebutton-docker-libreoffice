@@ -1,5 +1,6 @@
 name: Build And Push to Dockerhub
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*'
